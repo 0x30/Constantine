@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path");
 
 // vue.config.js
 module.exports = {
@@ -7,6 +7,7 @@ module.exports = {
       rules: [
         {
           test: /\.md$/,
+          include: [path.resolve(__dirname, "articles")],
           use: [
             {
               loader: path.resolve(__dirname, "./article-loader/index.ts")

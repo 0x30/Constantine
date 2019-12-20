@@ -1,29 +1,29 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <div v-html="post.contentHtml"></div>
+
+    <PostVue :post="post" />
   </div>
 </template>
 
-<script lang="ts">
+<script>
+import { posts } from "@/models/Posts";
 import Vue from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import PostVue from "./components/Post.vue";
 
 export default Vue.extend({
   name: "app",
+  data() {
+    return {
+      post: posts[0]
+    };
+  },
   components: {
-    HelloWorld
+    PostVue
+  },
+  mounted() {
+    console.log(posts);
   }
 });
 </script>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
