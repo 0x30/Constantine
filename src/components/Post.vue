@@ -5,7 +5,6 @@
 <script>
 import "highlight.js";
 import "@/assets/styles/github-markdown.scss";
-import "highlight.js/styles/atom-one-dark.css";
 
 export default {
   props: {
