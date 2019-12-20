@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <div v-html="post.contentHtml"></div>
-
     <PostVue :post="post" />
   </div>
 </template>
@@ -26,4 +24,3 @@ export default Vue.extend({
   }
 });
 </script>
-
