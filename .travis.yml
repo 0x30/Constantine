@@ -27,6 +27,7 @@ after_script:
   
   - git init
   - git branch gh_page
+  - git checkout gh_page
   - git add .
   - git commit -m "new posts. 😊😊😊😊"
 
