@@ -1,7 +1,7 @@
 language: node_js
 sudo: required
 # 指定node_js版本
-node_js: 
+node_js:
   - 12.13.1
 # 指定缓存模块，可选。缓存可加快编译速度。
 cache:
@@ -11,7 +11,7 @@ cache:
 # 指定博客源码分支，因人而异。hexo博客源码托管在独立repo则不用设置此项
 branches:
   only:
-    - master 
+    - master
 
 # Start: Build Lifecycle
 install:
@@ -24,14 +24,15 @@ script:
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
 after_script:
   - cd dist
-  
+
   - git init
-  - git branch gh_page
-  - git checkout gh_page
+  - git checkout -b gh_page
+
   - git add .
   - git commit -m "new posts. 😊😊😊😊"
 
   - git config user.name "travis ci"
   - git config user.email "200739491@qq.com"
+
   - git remote add origin https://0x30:${GITHUB_TOKEN}@github.com/0x30/0x30.github.io.git
   - git push origin -f gh_page
