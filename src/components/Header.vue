@@ -23,6 +23,7 @@ export default {};
   display: flex;
   justify-content: space-between;
 
+  color: var(--text-color);
   .icon {
     font-size: 5rem;
   }

@@ -1,5 +1,5 @@
 html {
-  background-color: #f7f7f7;
+  background-color: var(--bg-color);
   -webkit-font-smoothing: antialiased;
 
   body {
@@ -9,11 +9,11 @@ html {
       "Work Sans", "Microsoft YaHei", SimSun;
     font-size: 16px;
     width: 100%;
-    background-color: #f7f7f7;
+    background-color: var(--bg-color);
 
     #app {
-      background: #ffffff;
-      box-shadow: 0px 10px 20px 0px rgba(236, 236, 236, 0.86);
+      background: var(--bg-color);
+      box-shadow: 0px 10px 20px 0px var(--md-char-color);
       width: 820px;
       margin: 0 auto;
       margin-top: 60px;

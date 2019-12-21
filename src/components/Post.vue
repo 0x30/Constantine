@@ -5,7 +5,7 @@
       v-for="(post, index) in posts"
       v-bind:key="index"
     >
-      <h2>{{ post.data.title }}</h2>
+      <h1>{{ post.data.title }}</h1>
       <p v-html="post.excerptHtml" class="excerpt"></p>
       <div class="footer">
         <span class="date-time">{{
@@ -39,7 +39,7 @@ export default {
 }
 
 .post-line {
-  padding: 40px 0 0 0;
+  padding: 40px 0;
   border-bottom: 1px solid var(--code-border-color);
 
   .excerpt {
@@ -47,18 +47,24 @@ export default {
   }
 
   .footer {
-    padding: 20px 0;
+    padding: 10px 0;
+    opacity: 0.6;
 
     font-size: 0.7rem;
     color: var(--meta-content-color);
 
     display: flex;
 
+    .date-time {
+      letter-spacing: 0.12rem;
+    }
+
     .tags {
       margin-left: 8px;
+      text-transform: capitalize;
 
       span:not(:last-child)::after {
-        content: ",";
+        content: " ";
       }
     }
   }
