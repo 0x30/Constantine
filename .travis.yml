@@ -26,7 +26,6 @@ after_script:
   - cd dist
 
   - git init
-  - git checkout -b gh_page
 
   - git add .
   - git commit -m "new posts. 😊😊😊😊"
@@ -35,4 +34,4 @@ after_script:
   - git config user.email "200739491@qq.com"
 
   - git remote add origin https://0x30:${GITHUB_TOKEN}@github.com/0x30/0x30.github.io.git
-  - git push origin -f gh_page
+  - git push origin -f master
