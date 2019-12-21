@@ -1,14 +1,21 @@
 <template>
-  <div v-html="post.contentHtml" class="markdown-body"></div>
+  <div class="markdown-body" v-html="post_67.contentHtml"></div>
 </template>
 
 <script>
-import "highlight.js";
-import "@/assets/styles/github-markdown.scss";
+import post_67 from "../../articles/测试.md";
+
+// import "@/assets/styles/ursine/ursine-umbra.scss"
+import "@/assets/styles/ursine/ursine-polar.scss"
 
 export default {
   props: {
-    post: Object
+    post: Array
+  },
+  data() {
+    return {
+      post_67: post_67
+    };
   }
 };
 </script>

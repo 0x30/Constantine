@@ -1,0 +1,79 @@
+// FONT-FACES //
+
+// Normal font-faces
+// Avenir Next LT Pro provided by Adrian Frutiger and Akira Kobayashi.
+// Downloaded from `https://www.cufonfonts.com/font/avenir-next-lt-pro`
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro Regular"),
+    url("./fonts/AvenirNextLTPro-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  font-style: italic;
+  font-weight: normal;
+  src: local("Avenir Next LT Pro It"),
+    url("./fonts/AvenirNextLTPro-Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  font-style: normal;
+  font-weight: bold;
+  src: local("Avenir Next LT Pro Demi"),
+    url("./fonts/AvenirNextLTPro-Demi.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Avenir Next LT Pro";
+  font-style: italic;
+  font-weight: bold;
+  src: local("Avenir Next LT Pro DemiIt"),
+    url("./fonts/AvenirNextLTPro-DemiItalic.woff") format("woff");
+}
+
+// Adelle provided by Veronika Burian and Jos Scaglione
+// Downloaded from `https://www.cufonfonts.com/font/adelle`
+@font-face {
+  font-family: "Adelle";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Adelle Light"), url("./fonts/Adelle-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Adelle";
+  font-style: italic;
+  font-weight: normal;
+  src: local("Adelle Light Italic"),
+    url("./fonts/Adelle-LightItalic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Adelle";
+  font-style: normal;
+  font-weight: bold;
+  src: local("Adelle SemiBold"),
+    url("./fonts/Adelle-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Adelle";
+  font-style: italic;
+  font-weight: bold;
+  src: local("Adelle SemiBold Italic"),
+    url("./fonts/Adelle-SemiBoldItalic.woff") format("woff");
+}
+
+// Cousine provided by Steve Matteson from Google Fonts
+// Downloaded from `https://fonts.google.com/specimen/Cousine`
+@font-face {
+  font-family: "Cousine";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Cousine Regular"),
+    url("./fonts/Cousine-Regular.woff") format("woff");
+}

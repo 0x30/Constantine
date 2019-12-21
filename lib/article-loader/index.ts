@@ -30,7 +30,7 @@ const md = require("markdown-it")({
   .use(require("markdown-it-anchor"), {
     permalink: true,
     permalinkBefore: true,
-    permalinkSymbol: "§",
+    permalinkSymbol: "",
     slugify: uslugify
   })
   .use(require("markdown-it-toc-done-right"), { slugify: uslugify })

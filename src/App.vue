@@ -14,14 +14,13 @@ export default Vue.extend({
   name: "app",
   data() {
     return {
-      post: posts[0]
+      post: posts
     };
   },
   components: {
     PostVue
   },
   mounted() {
-    console.log(posts);
   }
 });
 </script>

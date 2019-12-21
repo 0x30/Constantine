@@ -1,0 +1,16 @@
+// SCSS VARIABLES //
+$bg-color: #1e2022 !default;
+$text-color: #ddd !default;
+$md-char-color: #5b5b5b !default;
+$meta-content-color: #757575 !default;
+$link-color: #6bcafb !default;
+$mark-color: #196186d0 !default;
+$code-bg-color: #0000001a !default;
+$code-border-color: #ffffff26 !default;
+
+$primary-color: #428bca !default;
+$accent-color: #3c3c3c !default;
+$table-head-color: #4d4d4d !default;
+
+@import "./ursine-main.scss";
+@import "../../../../node_modules/highlight.js/styles/atom-one-dark.css";

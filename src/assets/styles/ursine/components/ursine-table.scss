@@ -1,0 +1,20 @@
+table {
+  border-collapse: collapse;
+  border: 1px solid $md-char-color;
+  margin: 1rem 0;
+
+  tr:nth-child(2n) {
+    background: rgba($color:  $accent-color, $alpha: 0.3);
+  }
+
+  thead {
+    // background: $table-head-color;
+    background: rgba($color:  $table-head-color, $alpha: 0.5);
+  }
+
+  td,
+  th {
+    padding: 0.35rem 0.7rem;
+    border: 1px solid $md-char-color;
+  }
+}

@@ -1,0 +1,126 @@
+// ROOT VARIABLES //
+$paragraph-font: "'Avenir Next LT Pro', 'Lato', sans-serif";
+$header-font: "'Adelle', 'Times New Roman', serif";
+$monospace-font: "'Cousine', 'Consolas', monospace";
+
+:root {
+  --bg-color: #{$bg-color}; // background color
+  --text-color: #{$text-color}; // text color
+  --md-char-color: #{$md-char-color}; // color of meta characters (i.e. `*` in markdown)
+  --meta-content-color: #{$meta-content-color}; // color of meta contents (i.e. image text or link address in markdown)
+  --table-border-color: #{$md-char-color}; // color of table cell borders
+
+  --monospace: #{$monospace-font}; // monospace font for code
+}
+
+// STYLING //
+
+@import "./components/ursine-fonts.scss";
+
+.markdown-body {
+  background-color: $bg-color;
+  color: $text-color;
+
+  font-family: unquote($paragraph-font);
+
+  width: 80%;
+  line-height: 1.6;
+  margin: 0 10%;
+
+  @import "./components/ursine-table.scss"; // Lists
+  @import "./components//ursine-header.scss";
+
+  // Lists
+  ol,
+  ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin: 0.5rem 0;
+
+    > li {
+      color: $primary-color;
+
+      > * {
+        color: $text-color;
+      }
+
+      > *:not(ol):not(ul) {
+        padding-left: 0.25rem;
+      }
+    }
+  }
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  a {
+    color: $link-color;
+  }
+
+  del {
+    color: $md-char-color;
+  }
+
+  mark {
+    padding: 2px 1px;
+    background: $mark-color;
+    color: inherit;
+  }
+
+  blockquote {
+    margin: 1rem 0;
+    position: relative;
+    font-family: unquote($header-font);
+
+    &::before {
+      content: "";
+      position: absolute;
+
+      position: absolute;
+      right: calc(100% + 10px);
+      height: 100%;
+      width: 0.2rem;
+      background: $primary-color;
+    }
+  }
+
+  .md-fences,
+  tt {
+    font-family: unquote($monospace-font);
+  }
+
+  hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba($color: $md-char-color, $alpha: 0.2);
+    border-bottom: 1px solid rgba($color: $md-char-color, $alpha: 0.3);
+  }
+
+  pre {
+    max-height: 20rem;
+    code {
+      font-size: 13px;
+    }
+  }
+
+  .footnotes {
+    float: footnote;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+
+    li {
+      color: $md-char-color;
+
+      p {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  img{
+      width: 50%;
+      margin-left: 25%;
+  }
+}
