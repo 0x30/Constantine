@@ -1,5 +1,5 @@
 <template>
-  <div class="markdown-body" v-html="post_67.contentHtml"></div>
+  <div class="markdown-body" v-html="post.contentHtml"></div>
 </template>
 
 <script>
@@ -10,12 +10,7 @@ import "@/assets/styles/ursine/ursine-polar.scss"
 
 export default {
   props: {
-    post: Array
-  },
-  data() {
-    return {
-      post_67: post_67
-    };
+    post: Object
   }
 };
 </script>

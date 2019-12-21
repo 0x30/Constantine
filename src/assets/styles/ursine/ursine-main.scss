@@ -27,27 +27,40 @@ $monospace-font: "'Cousine', 'Consolas', monospace";
   line-height: 1.6;
   margin: 0 10%;
 
+  font-size: 15px;
+
   @import "./components/ursine-table.scss"; // Lists
   @import "./components//ursine-header.scss";
 
   // Lists
   ol,
   ul {
-    list-style-type: disc;
-    padding-left: 2rem;
+    counter-reset: item;
+    list-style-type: none;
     margin: 0.5rem 0;
+    position: relative;
 
-    > li {
-      color: $primary-color;
+    li::before {
+      position: absolute;
+    }
 
-      > * {
-        color: $text-color;
-      }
+    li {
+      color: rgba($color: $text-color, $alpha: 0.8);
 
-      > *:not(ol):not(ul) {
-        padding-left: 0.25rem;
+      &::before {
+        margin-left: -1.5rem;
+        color: $md-char-color;
       }
     }
+  }
+
+  ul li::before {
+    content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  }
+
+  ol li:before {
+    content: counter(item) ". ";
+    counter-increment: item;
   }
 
   p {
@@ -110,8 +123,6 @@ $monospace-font: "'Cousine', 'Consolas', monospace";
       "Lucida Sans", Arial, sans-serif;
 
     li {
-      color: $md-char-color;
-
       p {
         margin: 0;
         padding: 0;
@@ -119,8 +130,8 @@ $monospace-font: "'Cousine', 'Consolas', monospace";
     }
   }
 
-  img{
-      width: 50%;
-      margin-left: 25%;
+  img {
+    width: 50%;
+    margin-left: 25%;
   }
 }
