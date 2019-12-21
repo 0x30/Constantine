@@ -9,62 +9,62 @@ h6 {
   font-family: unquote($header-font);
   position: relative;
 
-  &::before {
-    position: absolute;
-    right: calc(100% + 10px);
-    color: $md-char-color;
-    font-size: 0.6rem;
-    font-weight: bold;
-    font-variant: "small-caps";
+  // &::before {
+  //   position: absolute;
+  //   right: calc(100% + 10px);
+  //   color: var(--md-char-colorr);
+  //   font-size: 0.6rem;
+  //   font-weight: bold;
+  //   font-variant: "small-caps";
 
-    // Disable default header symbol where applicable (h3-h6)
-    border: 0;
-    border-radius: 0;
-    float: none;
-    padding: 0;
-    vertical-align: middle;
-    line-height: 20px;
-  }
+  //   // Disable default header symbol where applicable (h3-h6)
+  //   border: 0;
+  //   border-radius: 0;
+  //   float: none;
+  //   padding: 0;
+  //   vertical-align: middle;
+  //   line-height: 20px;
+  // }
 }
 
 h1 {
   font-size: 1.8rem;
   margin: 1rem 0;
 
-  &::before {
-    content: "H1";
-    bottom: 0.45rem;
-  }
+  // &::before {
+  //   content: "H1";
+  //   bottom: 0.45rem;
+  // }
 }
 
 h2 {
   font-size: 1.4rem;
   margin: 0.7rem 0;
 
-  &::before {
-    content: "H2";
-    bottom: 0.2rem;
-  }
+  // &::before {
+  //   content: "H2";
+  //   bottom: 0.2rem;
+  // }
 }
 
 h3 {
   font-size: 1.2rem;
   margin: 0.5rem 0;
 
-  &::before {
-    content: "H3";
-    bottom: 0.18rem;
-  }
+  // &::before {
+  //   content: "H3";
+  //   bottom: 0.18rem;
+  // }
 }
 
 h4 {
   font-size: 1.1rem;
   margin: 0.2rem 0;
 
-  &::before {
-    content: "H4";
-    bottom: 0.15rem;
-  }
+  // &::before {
+  //   content: "H4";
+  //   bottom: 0.15rem;
+  // }
 }
 
 h5,
@@ -72,15 +72,15 @@ h6 {
   font-size: 1rem;
   margin: 0;
 
-  &::before {
-    bottom: 0.1rem;
-  }
+  // &::before {
+  //   bottom: 0.1rem;
+  // }
 }
 
-h5::before {
-  content: "H5";
-}
+// h5::before {
+//   content: "H5";
+// }
 
-h6::before {
-  content: "H6";
-}
+// h6::before {
+//   content: "H6";
+// }

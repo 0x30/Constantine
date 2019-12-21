@@ -1,16 +1,66 @@
 <template>
-  <div class="markdown-body" v-html="post.contentHtml"></div>
+  <div class="markdown-body main">
+    <article
+      class="post-line"
+      v-for="(post, index) in posts"
+      v-bind:key="index"
+    >
+      <h2>{{ post.data.title }}</h2>
+      <p v-html="post.excerptHtml" class="excerpt"></p>
+      <div class="footer">
+        <span class="date-time">{{
+          new Date(post.data.date).toLocaleString()
+        }}</span>
+        <div class="tags">
+          <span v-for="(tag, index) in post.data.tags" v-bind:key="index">{{
+            tag
+          }}</span>
+        </div>
+      </div>
+    </article>
+  </div>
 </template>
 
 <script>
+import { posts } from "@/models/Posts";
+
 import post_67 from "../../articles/测试.md";
 
-// import "@/assets/styles/ursine/ursine-umbra.scss"
-import "@/assets/styles/ursine/ursine-polar.scss"
-
 export default {
-  props: {
-    post: Object
-  }
+  data() {
+    return { posts: posts };
+  },
+  mounted() {}
 };
 </script>
+
+<style lang="scss" scoped>
+.main {
+}
+
+.post-line {
+  padding: 40px 0 0 0;
+  border-bottom: 1px solid var(--code-border-color);
+
+  .excerpt {
+    line-height: 2rem;
+  }
+
+  .footer {
+    padding: 20px 0;
+
+    font-size: 0.7rem;
+    color: var(--meta-content-color);
+
+    display: flex;
+
+    .tags {
+      margin-left: 8px;
+
+      span:not(:last-child)::after {
+        content: ",";
+      }
+    }
+  }
+}
+</style>

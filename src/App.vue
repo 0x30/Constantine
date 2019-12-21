@@ -1,21 +1,16 @@
 <template>
   <div id="app">
-    <div
-      v-for="(post, index) in posts"
-      v-bind:key="index"
-      @click="current = post"
-    >
-      <span>{{ new Date(post.data.date).toLocaleString() }} --- {{ post.data.title }}</span>
-    </div>
-    <PostVue :post="current" />
-    <router-view></router-view>
+    <HeaderVue />
+    <PostVue />
   </div>
 </template>
 
 <script>
 import { posts } from "@/models/Posts";
 import Vue from "vue";
+
 import PostVue from "./components/Post.vue";
+import HeaderVue from "./components/Header.vue";
 
 export default Vue.extend({
   name: "app",
@@ -26,7 +21,8 @@ export default Vue.extend({
     };
   },
   components: {
-    PostVue
+    PostVue,
+    HeaderVue
   },
   mounted() {
     // new Date().toLocaleString()

@@ -1,25 +1,20 @@
 // ROOT VARIABLES //
-$paragraph-font: "'Avenir Next LT Pro', 'Lato', sans-serif";
-$header-font: "'Adelle', 'Times New Roman', serif";
-$monospace-font: "'Cousine', 'Consolas', monospace";
+$paragraph-font: "'source-han-sans-simplified-c', 'PingFang SC','Hiragino Sans GB', 'PingHei','Avenir Next LT Pro', 'Lato', sans-serif";
+$header-font: "'source-han-sans-simplified-c', 'PingFang SC','Hiragino Sans GB', 'PingHei','Adelle', 'Times New Roman', serif";
+$monospace-font: "'source-han-sans-simplified-c', 'PingFang SC','Hiragino Sans GB', 'PingHei','Cousine', 'Consolas', monospace";
 
 :root {
-  --bg-color: #{$bg-color}; // background color
-  --text-color: #{$text-color}; // text color
-  --md-char-color: #{$md-char-color}; // color of meta characters (i.e. `*` in markdown)
-  --meta-content-color: #{$meta-content-color}; // color of meta contents (i.e. image text or link address in markdown)
-  --table-border-color: #{$md-char-color}; // color of table cell borders
-
   --monospace: #{$monospace-font}; // monospace font for code
 }
 
 // STYLING //
 
+@import "./ursine-var.scss";
 @import "./components/ursine-fonts.scss";
 
 .markdown-body {
-  background-color: $bg-color;
-  color: $text-color;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 
   font-family: unquote($paragraph-font);
 
@@ -45,11 +40,11 @@ $monospace-font: "'Cousine', 'Consolas', monospace";
     }
 
     li {
-      color: rgba($color: $text-color, $alpha: 0.8);
+      color: rgba($color: var(--text-color), $alpha: 0.8);
 
       &::before {
         margin-left: -1.5rem;
-        color: $md-char-color;
+        color: var(--md-char-color);
       }
     }
   }
@@ -68,16 +63,16 @@ $monospace-font: "'Cousine', 'Consolas', monospace";
   }
 
   a {
-    color: $link-color;
+    color: var(--primary-color);
   }
 
   del {
-    color: $md-char-color;
+    color: var(--md-char-color);
   }
 
   mark {
     padding: 2px 1px;
-    background: $mark-color;
+    background: var(-mark-color);
     color: inherit;
   }
 
@@ -94,7 +89,7 @@ $monospace-font: "'Cousine', 'Consolas', monospace";
       right: calc(100% + 10px);
       height: 100%;
       width: 0.2rem;
-      background: $primary-color;
+      background: var(--primary-color);
     }
   }
 
@@ -106,8 +101,8 @@ $monospace-font: "'Cousine', 'Consolas', monospace";
   hr {
     border: 0;
     height: 0;
-    border-top: 1px solid rgba($color: $md-char-color, $alpha: 0.2);
-    border-bottom: 1px solid rgba($color: $md-char-color, $alpha: 0.3);
+    border-top: 1px solid rgba($color: var(--md-char-color), $alpha: 0.2);
+    border-bottom: 1px solid rgba($color: var(--md-char-color), $alpha: 0.3);
   }
 
   pre {

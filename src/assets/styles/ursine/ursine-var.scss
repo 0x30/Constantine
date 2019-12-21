@@ -1,0 +1,31 @@
+// polar 日间样式
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333;
+  --md-char-color: #b4b4b4;
+  --meta-content-color: #757575;
+  --mark-color: #d3ffa4;
+  --code-bg-color: #00000008;
+  --code-border-color: #0000001a;
+
+  --primary-color: #db4d52;
+  --accent-color: #d0d0d0;
+  --table-head-color: #d0d0d0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    // umbra 夜间样式
+    --bg-color: #1e2022;
+    --text-color: #ddd;
+    --md-char-color: #5b5b5b;
+    --meta-content-color: #757575;
+    --mark-color: #196186d0;
+    --code-bg-color: #0000001a;
+    --code-border-color: #ffffff26;
+
+    --primary-color: #428bca;
+    --accent-color: #3c3c3c;
+    --table-head-color: #4d4d4d;
+  }
+}
