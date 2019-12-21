@@ -1,5 +1,5 @@
 const path = require("path");
-const AiticlePlugin = require("./article-plugin/index.ts");
+const AiticlePlugin = require("./lib/article-plugin/index.ts");
 
 // vue.config.js
 module.exports = {
@@ -10,13 +10,14 @@ module.exports = {
         {
           test: /\.md$/,
           include: [path.resolve(__dirname, "articles")],
-          use: [
-            {
-              loader: path.resolve(__dirname, "./article-loader/index.ts")
-            }
-          ]
+          use: ["md-loader"]
         }
       ]
+    },
+    resolveLoader: {
+      alias: {
+        "md-loader": path.resolve(__dirname, "./lib/article-loader/index.ts")
+      }
     }
   }
 };
