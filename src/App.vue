@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <PostVue :post="post" />
+    <router-view></router-view>
   </div>
 </template>
 
