@@ -1,20 +1,12 @@
 <template>
   <div class="markdown-body main">
-    <article
-      class="post-line"
-      v-for="(post, index) in posts"
-      v-bind:key="index"
-    >
+    <article class="post-line" v-for="(post, index) in posts" v-bind:key="index">
       <h1>{{ post.data.title }}</h1>
       <p v-html="post.excerptHtml" class="excerpt"></p>
       <div class="footer">
-        <span class="date-time">{{
-          new Date(post.data.date).toLocaleString()
-        }}</span>
+        <span class="date-time">{{ new Date(post.data.date).toLocaleString() }}</span>
         <div class="tags">
-          <span v-for="(tag, index) in post.data.tags" v-bind:key="index">{{
-            tag
-          }}</span>
+          <span v-for="(tag, index) in post.data.tags" v-bind:key="index">{{ tag }}</span>
         </div>
       </div>
     </article>
@@ -22,15 +14,21 @@
 </template>
 
 <script>
-import { posts } from "@/models/Posts";
-
-import post_67 from "../../articles/测试.md";
+import { pages } from "@/models/Posts";
 
 export default {
   data() {
-    return { posts: posts };
+    return {
+      page: 0,
+      pages: pages,
+      posts: []
+    };
   },
-  mounted() {}
+  mounted() {
+    Promise.all(this.pages[this.page].map(f => f()))
+      .then(res => res.map(re => re.default))
+      .then(res => this.posts = res);
+  }
 };
 </script>
 
