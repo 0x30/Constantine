@@ -27,7 +27,7 @@ export default {
   mounted() {
     Promise.all(this.pages[this.page].map(f => f()))
       .then(res => res.map(re => re.default))
-      .then(res => this.posts = res);
+      .then(res => (this.posts = res));
   }
 };
 </script>
