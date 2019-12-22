@@ -5,11 +5,9 @@ const hljs = require("highlight.js"); // https://highlightjs.org/
 function highlight(str, lang) {
   if (lang && hljs.getLanguage(lang)) {
     try {
-      return (
-        '<pre class="hljs"><code>' +
-        hljs.highlight(lang, str, true).value +
-        "</code></pre>"
-      );
+      return `<pre class="hljs"><code>${
+        hljs.highlight(lang, str, true).value
+      }</code></pre>`;
     } catch (__) {}
   }
 
