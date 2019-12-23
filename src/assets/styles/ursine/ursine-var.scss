@@ -11,7 +11,11 @@
   --primary-color: #db4d52;
   --accent-color: #d0d0d0;
   --table-head-color: #d0d0d0;
+
+  @import "../../../../node_modules/highlight.js/scss/atom-one-light.scss";
 }
+
+// @import "../../../node_modules/highlight.js/styles/railscasts.css";
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -27,5 +31,7 @@
     --primary-color: #428bca;
     --accent-color: #3c3c3c;
     --table-head-color: #4d4d4d;
+
+    @import "../../../../node_modules/highlight.js/scss/atom-one-dark.scss";
   }
 }
