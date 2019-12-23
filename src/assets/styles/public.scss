@@ -4,28 +4,23 @@ html {
 
   body {
     color: #333;
-    font-family: "source-han-sans-simplified-c", "PingFang SC",
-      "Hiragino Sans GB", "PingHei", "Open Sans", sans-serif, Helvetica Neue,
-      "Work Sans", "Microsoft YaHei", SimSun;
+    font-family: "source-han-sans-simplified-c", "PingFang SC", "Hiragino Sans GB", "PingHei", "Open Sans", sans-serif, Helvetica Neue, "Work Sans",
+      "Microsoft YaHei", SimSun;
     font-size: 16px;
     width: 100%;
     background-color: var(--bg-color);
 
     #app {
-      background: var(--bg-color);
-      box-shadow: 0px 10px 20px 0px var(--md-char-color);
-      width: 820px;
-      margin: 0 auto;
-      margin-top: 60px;
-
-      line-height: 2rem;
-      letter-spacing: 0.1px;
+      width: 100%;
+      height: 100%;
     }
   }
 }
 
-code {
-  font-family: hack, Arial, Helvetica, sans-serif;
+pre {
+  code {
+    font-family: hack, Arial, Helvetica, sans-serif;
+  }
 }
 
 // polar 日间样式

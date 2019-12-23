@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <HeaderVue />
-    <PostVue />
+    <div class="main">
+      <HeaderVue />
+      <router-view :key="$route.fullPath"></router-view>
+    </div>
+    <FooterVue />
   </div>
 </template>
 
 <script>
 import Vue from "vue";
 
-import PostVue from "./components/Post.vue";
 import HeaderVue from "./components/Header.vue";
+import FooterVue from "./components/Footer.vue";
 
 export default Vue.extend({
   name: "app",
@@ -17,9 +20,24 @@ export default Vue.extend({
     return {};
   },
   components: {
-    PostVue,
-    HeaderVue
+    HeaderVue,
+    FooterVue
   },
   mounted() {}
 });
 </script>
+
+<style lang="scss" scoped>
+.main {
+  background: var(--bg-color);
+  box-shadow: 3px 3px 10px 0px var(--md-char-color);
+  width: 820px;
+  margin: 0 auto;
+  margin-top: 60px;
+
+  line-height: 2rem;
+  letter-spacing: 0.1px;
+
+  border-radius: 1px;
+}
+</style>
