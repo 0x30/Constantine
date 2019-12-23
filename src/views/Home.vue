@@ -1,9 +1,9 @@
 <template>
   <div class="markdown-body">
     <article class="post-line" v-for="(post, index) in posts" v-bind:key="index">
-      <router-link v-if="nextPage" :to="nextPage" @click="toNextPage">
-        <h2>{{ post.data.title }}</h2></router-link
-      >
+      <router-link :to="`/post/${$attrs.page}/${index}`">
+        <h2>{{ post.data.title }}</h2>
+      </router-link>
       <p v-html="post.excerptHtml" class="excerpt"></p>
       <div class="footer">
         <span class="date-time">{{ new Date(post.data.date).toLocaleString() }}</span>
@@ -12,7 +12,7 @@
         </div>
       </div>
     </article>
-    <router-link v-if="nextPage" :to="nextPage" @click="toNextPage" class="next-page">查看更多</router-link>
+    <router-link v-if="nextPage" :to="nextPage" class="next-page">查看更多</router-link>
   </div>
 </template>
 
@@ -39,11 +39,6 @@ export default {
   },
   activated() {
     console.log(this.$attrs.page);
-  },
-  methods: {
-    toNextPage() {
-      this.$router.push(this.nextPage);
-    }
   }
 };
 </script>
