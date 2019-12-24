@@ -1,22 +1,19 @@
-@import "../ursine-var.scss";
-
 table {
   border-collapse: collapse;
-  border: 1px solid var(--md-char-colorr);
+  border: 1px solid var(--md-char-color);
   margin: 1rem 0;
 
   tr:nth-child(2n) {
-    background: rgba($color: var(--accent-color), $alpha: 0.3);
+    background: var(--accent-color);
   }
 
   thead {
-    // background: var(--table-head-color);
-    background: rgba($color: var(--table-head-color), $alpha: 0.5);
+    background: var(--table-head-color);
   }
 
   td,
   th {
     padding: 0.35rem 0.7rem;
-    border: 1px solid var(--md-char-colorr);
+    border: 1px solid var(--md-char-color);
   }
 }

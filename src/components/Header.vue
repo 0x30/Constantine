@@ -1,13 +1,12 @@
 <template>
   <div class="header">
-    <div class="icon"><i class="fa fa-terminal" aria-hidden="true"></i></div>
     <div class="info">
-      <span>Gavin,IOS Dever,Vue Dever</span>
+      <h4>Gavin,IOS Dever,Vue Dever</h4>
       <div class="contact-info">
-        <i class="fab fa-instagram" aria-hidden="true"></i>
-        <i class="fab fa-weibo" aria-hidden="true"></i>
-        <i class="fab fa-twitter" aria-hidden="true"></i>
-        <i class="fab fa-weixin" aria-hidden="true"></i>
+        <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="#"><i class="fab fa-weibo" aria-hidden="true"></i></a>
+        <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <a href="#"><i class="fab fa-weixin" aria-hidden="true"></i></a>
       </div>
     </div>
   </div>
@@ -21,7 +20,7 @@ export default {};
 .header {
   padding: 100px 40px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 
   color: var(--text-color);
   .icon {
@@ -35,9 +34,14 @@ export default {};
 
     .contact-info {
       display: flex;
+      margin-top: 10px;
 
       i {
         padding: 4px;
+      }
+
+      i:hover {
+        opacity: 0.8;
       }
     }
   }

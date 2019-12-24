@@ -11,6 +11,7 @@ export default {};
 <style lang="scss" scoped>
 footer.footer {
   padding: 20px;
+  margin-top: 80px;
 
   display: flex;
   justify-content: center;
@@ -24,7 +25,7 @@ footer.footer {
     font-size: 0.3rem;
 
     a {
-      color: var(meta-content-color);
+      color: var(--meta-content-color);
     }
     a:active,
     a:visited,

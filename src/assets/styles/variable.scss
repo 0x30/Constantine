@@ -1,5 +1,7 @@
 // polar 日间样式
 :root {
+  color-scheme: light dark;
+
   --bg-color: #ffffff;
   --text-color: #333;
   --md-char-color: #b4b4b4;
@@ -9,14 +11,12 @@
   --code-border-color: #0000001a;
 
   --primary-color: #db4d52;
+
   --accent-color: #d0d0d0;
   --table-head-color: #d0d0d0;
-
-  @import "../../../../node_modules/highlight.js/scss/atom-one-light.scss";
 }
 
 // @import "../../../node_modules/highlight.js/styles/railscasts.css";
-
 @media (prefers-color-scheme: dark) {
   :root {
     // umbra 夜间样式
@@ -29,9 +29,8 @@
     --code-border-color: #ffffff26;
 
     --primary-color: #428bca;
+
     --accent-color: #3c3c3c;
     --table-head-color: #4d4d4d;
-
-    @import "../../../../node_modules/highlight.js/scss/atom-one-dark.scss";
   }
 }

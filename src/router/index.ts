@@ -22,7 +22,7 @@ const routes: RouteConfig[] = [
   {
     path: "/post/:page/:index",
     name: "post",
-    component: () => import(/* webpackChunkName: "about" */ "../views/Post.vue"),
+    component: () => import(/* webpackChunkName: "about" */ "../views/Detail.vue"),
     props: route => ({ page: Number.parseInt(route.params.page || "0"), index: Number.parseInt(route.params.index || "0") })
   }
 ];

@@ -1,12 +1,12 @@
 html {
   background-color: var(--bg-color);
   -webkit-font-smoothing: antialiased;
+  font-size: 15px;
 
   body {
     color: #333;
     font-family: "source-han-sans-simplified-c", "PingFang SC", "Hiragino Sans GB", "PingHei", "Open Sans", sans-serif, Helvetica Neue, "Work Sans",
       "Microsoft YaHei", SimSun;
-    font-size: 16px;
     width: 100%;
     background-color: var(--bg-color);
 
@@ -17,19 +17,30 @@ html {
   }
 }
 
+a {
+  color: var(--text-color);
+}
 pre {
   code {
     font-family: hack, Arial, Helvetica, sans-serif;
   }
 }
 
-// polar 日间样式
-:root {
-  color-scheme: light dark;
-
-  @import "../../../node_modules/highlight.js/styles/atom-one-light.css";
-}
-
+@import "../../../node_modules/highlight.js/styles/atom-one-light.css";
 @media (prefers-color-scheme: dark) {
   @import "../../../node_modules/highlight.js/styles/atom-one-dark.css";
+}
+
+body a.no-primary-color-link {
+  color: var(--text-color);
+}
+
+body a.no-primary-color-link:active,
+body a.no-primary-color-link:visited,
+body a.no-primary-color-link:link {
+  text-decoration: none;
+}
+
+body a.no-primary-color-link:hover {
+  text-decoration: underline;
 }

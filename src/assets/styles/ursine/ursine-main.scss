@@ -9,8 +9,9 @@ $monospace-font: "'source-han-sans-simplified-c', 'PingFang SC','Hiragino Sans G
 
 // STYLING //
 
-@import "./ursine-var.scss";
-@import "./components/ursine-fonts.scss";
+@import "../variable.scss";
+@import "./components/ursine-table.scss"; // Lists
+@import "./components//ursine-header.scss";
 
 .markdown-body {
   background-color: var(--bg-color);
@@ -18,14 +19,10 @@ $monospace-font: "'source-han-sans-simplified-c', 'PingFang SC','Hiragino Sans G
 
   font-family: unquote($paragraph-font);
 
-  width: 80%;
-  line-height: 1.6;
-  margin: 0 10%;
+  line-height: 1.7rem;
+  box-sizing: border-box;
 
-  font-size: 15px;
-
-  @import "./components/ursine-table.scss"; // Lists
-  @import "./components//ursine-header.scss";
+  font-size: 1rem;
 
   // Lists
   ol,
@@ -108,15 +105,14 @@ $monospace-font: "'source-han-sans-simplified-c', 'PingFang SC','Hiragino Sans G
   pre {
     max-height: 20rem;
     code {
-      font-size: 13px;
+      font-size: 0.8rem;
     }
     overflow: auto;
   }
 
   .footnotes {
     float: footnote;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 
     li {
       p {
