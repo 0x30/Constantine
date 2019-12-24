@@ -26,10 +26,8 @@ pre {
   }
 }
 
-@import "../../../node_modules/highlight.js/styles/atom-one-light.css";
-@media (prefers-color-scheme: dark) {
-  @import "../../../node_modules/highlight.js/styles/atom-one-dark.css";
-}
+@import "../../../node_modules/highlight.js/styles/atom-one-light.css" (prefers-color-scheme: light);
+@import "../../../node_modules/highlight.js/styles/atom-one-dark.css" (prefers-color-scheme: dark);
 
 body a.no-primary-color-link {
   color: var(--text-color);
