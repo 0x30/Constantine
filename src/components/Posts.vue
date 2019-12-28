@@ -18,7 +18,6 @@ import TagsVue from "./Tags.vue";
 
 export default {
   props: {
-    pagePrefix: Number,
     posts: Array
   },
   components: {

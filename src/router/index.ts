@@ -24,6 +24,12 @@ const routes: RouteConfig[] = [
     name: "post",
     component: () => import(/* webpackChunkName: "about" */ "../views/Detail.vue"),
     props: route => ({ page: Number.parseInt(route.params.page || "0"), index: Number.parseInt(route.params.index || "0") })
+  },
+  {
+    path: "/tags/:tag/:page?",
+    name: "tags",
+    component: () => import(/* webpackChunkName: "about" */ "../views/Tags.vue"),
+    props: route => ({ page: Number.parseInt(route.params.page || "0"), tag: route.params.tag })
   }
 ];
 

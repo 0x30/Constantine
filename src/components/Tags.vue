@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a v-for="(tag, i) in tags" :href="'/tag/' + tag" class="no-primary-color-link" v-bind:key="i">{{ tag }}</a>
+    <router-link v-for="(tag, i) in tags" :to="'/tags/' + tag" class="no-primary-color-link" v-bind:key="i">{{ tag }}</router-link>
   </div>
 </template>
 <script>

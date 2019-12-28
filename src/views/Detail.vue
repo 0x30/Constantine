@@ -1,5 +1,5 @@
 <template>
-  <div class="markdown-body">
+  <div class="markdown-body" v-if="post">
     <div class="post-header">
       <h1>{{ post.data.title }}</h1>
       <p>{{ new Date(post.data.date).toLocaleString() }}</p>
