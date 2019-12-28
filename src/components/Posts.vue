@@ -1,7 +1,7 @@
 <template>
   <div>
     <article class="post-line" v-for="(post, index) in posts" v-bind:key="index">
-      <router-link class="no-primary-color-link" :to="post.data.url">
+      <router-link class="no-primary-color-link" :to="`/post/${post.data.title}`">
         <h2>{{ post.data.title }}</h2>
       </router-link>
       <p v-html="post.excerptHtml" class="excerpt"></p>

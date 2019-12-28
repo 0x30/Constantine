@@ -5,30 +5,25 @@
       <p>{{ new Date(post.data.date).toLocaleString() }}</p>
     </div>
     <article v-if="post" v-html="post.contentHtml"></article>
-    <div class="post-footer">
-      <a v-for="(tag, i) in tags" :href="'/tag/' + tag" v-bind:key="i">{{ tag }}</a>
-    </div>
+    <tag-view class="post-footer" :tags="post.data.tags || []" />
   </div>
 </template>
 
 <script>
-import { pages } from "@/models/Posts";
+import { posts } from "@/models/Posts";
+import TagsVue from "../components/Tags.vue";
 export default {
   data() {
     return {
-      pages: pages,
+      posts: posts,
       post: undefined
     };
   },
-  computed: {
-    tags() {
-      if (this.post === undefined) return undefined;
-      // return (this.post.data.tags || []).map(tag => `<a class="special-a-link" href="/tag/${tag}">${tag}</a>`).join("，");
-      return this.post.data.tags || [];
-    }
+  components: {
+    "tag-view": TagsVue
   },
-  mounted() {
-    Promise.all(this.pages[this.$attrs.page].map(f => f())).then(res => (this.post = res[this.$attrs.index].default));
+  mounted: function() {
+    this.posts[this.$attrs.title]().then(res => (this.post = res.default));
   }
 };
 </script>

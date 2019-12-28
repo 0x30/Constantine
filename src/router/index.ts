@@ -20,10 +20,10 @@ const routes: RouteConfig[] = [
     component: () => import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
-    path: "/post/:page/:index",
+    path: "/post/:title",
     name: "post",
     component: () => import(/* webpackChunkName: "about" */ "../views/Detail.vue"),
-    props: route => ({ page: Number.parseInt(route.params.page || "0"), index: Number.parseInt(route.params.index || "0") })
+    props: route => ({ title: route.params.title })
   },
   {
     path: "/tags/:tag/:page?",
