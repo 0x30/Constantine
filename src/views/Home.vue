@@ -1,8 +1,5 @@
 <template>
-  <div class="markdown-body">
-    <post-list-view v-if="posts" :posts="posts" :pagePrefix="`post/${$attrs.page}/`" />
-    <router-link v-if="nextPage" :to="nextPage" class="next-page no-primary-color-link">查看更多</router-link>
-  </div>
+  <post-list-view :posts="posts" :next-page="nextPage" />
 </template>
 
 <script>
@@ -28,26 +25,7 @@ export default {
   mounted() {
     Promise.all(this.pages[this.$attrs.page].map(f => f()))
       .then(res => res.map(re => re.default))
-      .then(res => {
-        for (const [index, re] of res.entries()) {
-          re.data["url"] = `post/${this.$attrs.page}/${index}`;
-        }
-        this.posts = res;
-      });
+      .then(res => (this.posts = res));
   }
 };
 </script>
-
-<style lang="scss" scoped>
-div.markdown-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.next-page {
-  font-size: 1.07rem;
-  padding: 23px 5px;
-
-  align-self: flex-end;
-}
-</style>

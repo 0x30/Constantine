@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="markdown-body">
     <article class="post-line" v-for="(post, index) in posts" v-bind:key="index">
       <router-link class="no-primary-color-link" :to="`/post/${post.data.title}`">
         <h2>{{ post.data.title }}</h2>
@@ -10,6 +10,7 @@
         <tag-view class="tags" :tags="post.data.tags || []" />
       </div>
     </article>
+    <router-link v-if="nextPage" :to="nextPage" class="next-page no-primary-color-link">查看更多</router-link>
   </div>
 </template>
 
@@ -18,6 +19,7 @@ import TagsVue from "./Tags.vue";
 
 export default {
   props: {
+    nextPage: String,
     posts: Array
   },
   components: {
@@ -27,6 +29,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+div.markdown-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.next-page {
+  font-size: 1.07rem;
+  padding: 23px 5px;
+
+  align-self: flex-end;
+}
+
 .post-line {
   padding: 40px 0;
   border-bottom: 1px solid var(--code-border-color);

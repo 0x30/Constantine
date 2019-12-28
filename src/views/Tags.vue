@@ -1,8 +1,5 @@
 <template>
-  <div class="markdown-body">
-    <post-list-view v-if="posts" :posts="posts" :pagePrefix="`post/${$attrs.page}/`" />
-    <router-link v-if="nextPage" :to="nextPage" class="next-page no-primary-color-link">查看更多</router-link>
-  </div>
+  <post-list-view :posts="posts" :next-page="nextPage" />
 </template>
 
 <script>
@@ -13,8 +10,8 @@ export default {
   data() {
     return {
       tags: tags,
-      pages: [],
-      posts: []
+      posts: [],
+      pages: []
     };
   },
   components: {
@@ -22,36 +19,13 @@ export default {
   },
   computed: {
     nextPage() {
-      if (this.$attrs.page < this.pages.length - 1) return `/${this.$attrs.page + 1}`;
+      if (this.$attrs.page < this.pages.length - 1) return `/tags/${this.$attrs.tag}/${this.$attrs.page + 1}`;
       return undefined;
     }
   },
   mounted() {
-    console.log(this.$attrs);
-
     this.pages = this.tags[this.$attrs.tag];
-    Promise.all(this.pages[this.$attrs.page].map(f => f()))
-      .then(res => res.map(re => re.default))
-      .then(res => {
-        for (const [index, re] of res.entries()) {
-          re.data["url"] = `post/${this.$attrs.page}/${index}`;
-        }
-        this.posts = res;
-      });
+    Promise.all(this.pages[this.$attrs.page].map(f => f())).then(res => (this.posts = res.map(re => re.default)));
   }
 };
 </script>
-
-<style lang="scss" scoped>
-div.markdown-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.next-page {
-  font-size: 1.07rem;
-  padding: 23px 5px;
-
-  align-self: flex-end;
-}
-</style>
