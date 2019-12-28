@@ -47,18 +47,5 @@ export default {
   justify-content: flex-end;
 
   font-size: 0.9rem;
-
-  a {
-    margin-left: 3px;
-    color: var(--meta-content-color);
-  }
-  a:active,
-  a:visited,
-  a:link {
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
 }
 </style>

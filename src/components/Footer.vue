@@ -22,7 +22,7 @@ footer.footer {
   .copyright {
     font-family: hack;
 
-    font-size: 0.3rem;
+    font-size: 12px;
 
     a {
       color: var(--meta-content-color);

@@ -35,7 +35,7 @@ div.markdown-body {
 }
 
 .next-page {
-  font-size: 1.07rem;
+  font-size: 14px;
   padding: 23px 5px;
 
   align-self: flex-end;
