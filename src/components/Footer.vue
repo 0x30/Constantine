@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <div class="copyright">power by <a href="https://github.com/0x30/Constantine">Constantine</a>,Created by 0x30</div>
+    <div class="copyright">power by <a class="no-primary-color-link" href="https://github.com/0x30/Constantine">Constantine</a>,Created by 0x30</div>
   </footer>
 </template>
 
@@ -21,20 +21,9 @@ footer.footer {
 
   .copyright {
     font-family: hack;
-
     font-size: 12px;
-
-    a {
-      color: var(--meta-content-color);
-    }
-    a:active,
-    a:visited,
-    a:link {
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
   }
+
+  padding-bottom: calc(var(--safe-area-inset-bottom) + 20px);
 }
 </style>

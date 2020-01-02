@@ -6,7 +6,7 @@
       </router-link>
       <p v-html="post.excerptHtml" class="excerpt"></p>
       <div class="footer">
-        <span class="date-time">{{ new Date(post.data.date).toLocaleString() }}</span>
+        <span class="art-date-font-style">{{ new Date(post.data.date).toLocaleString() }}</span>
         <tag-view class="tags" :tags="post.data.tags || []" />
       </div>
     </article>
@@ -57,10 +57,6 @@ div.markdown-body {
     color: var(--meta-content-color);
 
     display: flex;
-
-    .date-time {
-      letter-spacing: 0.12rem;
-    }
 
     .tags {
       margin-left: 8px;

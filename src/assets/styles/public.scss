@@ -5,8 +5,8 @@ html {
 
   body {
     color: #333;
-    font-family: "source-han-sans-simplified-c", "PingFang SC", "Hiragino Sans GB", "PingHei", "Open Sans", sans-serif, Helvetica Neue, "Work Sans",
-      "Microsoft YaHei", SimSun;
+    font-family: "source-han-sans-simplified-c", "PingFang SC", "Hiragino Sans GB", "PingHei", "Open Sans", sans-serif,
+      Helvetica Neue, "Work Sans", "Microsoft YaHei", SimSun;
     width: 100%;
     background-color: var(--bg-color);
 
@@ -41,4 +41,9 @@ body a.no-primary-color-link:link {
 
 body a.no-primary-color-link:hover {
   text-decoration: underline;
+}
+
+.art-date-font-style {
+  font-style: italic;
+  letter-spacing: 0.12rem;
 }

@@ -26,7 +26,7 @@ export default Vue.extend({
 .main {
   width: 820px;
   margin: 0 auto;
-  margin-top: 60px;
+  margin-top: calc(var(--safe-area-inset-top) + 40px);
 
   letter-spacing: 0.15px;
 

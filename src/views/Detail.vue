@@ -2,7 +2,7 @@
   <div class="markdown-body" v-if="post">
     <div class="post-header">
       <h1>{{ post.data.title }}</h1>
-      <p>{{ new Date(post.data.date).toLocaleString() }}</p>
+      <p class="art-date-font-style">{{ new Date(post.data.date).toLocaleString() }}</p>
     </div>
     <article v-if="post" v-html="post.contentHtml"></article>
     <tag-view class="post-footer" :tags="post.data.tags || []" />
