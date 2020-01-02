@@ -1,7 +1,8 @@
 <template>
   <div id="app">
+    <div id="header-observe-div"></div>
+    <HeaderVue />
     <div class="main">
-      <HeaderVue />
       <router-view :key="$route.path"></router-view>
     </div>
     <FooterVue />
