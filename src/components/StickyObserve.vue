@@ -1,5 +1,5 @@
 <template>
-  <div class="observe-view" ref="obview"></div>
+  <div class="observe-view" id="observe-header-view" ref="obview"></div>
 </template>
 
 <script>

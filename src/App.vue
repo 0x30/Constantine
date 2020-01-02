@@ -4,6 +4,7 @@
     <header-view />
     <router-view :key="$route.path" class="main"></router-view>
     <footer-view />
+    <bottom-ass-view />
   </div>
 </template>
 
@@ -13,9 +14,11 @@ import Vue from "vue";
 import HeaderVue from "./components/Header.vue";
 import FooterVue from "./components/Footer.vue";
 import StickyObserveVue from "./components/StickyObserve.vue";
+import BottomAssemblyVue from "./components/BottomAssembly.vue";
 
 export default Vue.extend({
   components: {
+    "bottom-ass-view": BottomAssemblyVue,
     "header-view": HeaderVue,
     "footer-view": FooterVue,
     "sticky-view": StickyObserveVue
