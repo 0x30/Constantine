@@ -1,5 +1,5 @@
 <template>
-  <header id="header" class="header ">
+  <header class="header" :sticky="isSticky">
     <logo-view class="logo" />
     <span class="title">Gavin site.</span>
     <router-link to="#" class="no-primary-color-link">Home</router-link>
@@ -12,28 +12,17 @@
 
 <script>
 import LogoVue from "./Logo.vue";
+import { mapState } from "vuex";
 
 export default {
   components: {
     "logo-view": LogoVue
   },
-  async mounted() {
-    await this.$nextTick();
-    const observer = new IntersectionObserver(enries => document.querySelector("#header").setAttribute("sticky", enries[0].isIntersecting));
-    observer.observe(document.querySelector("#header-observe-div"));
+  computed: {
+    ...mapState({ isSticky: "isNavgationBarSticky" })
   }
 };
 </script>
-
-<style>
-#header-observe-div {
-  position: absolute;
-  height: 50px;
-  left: 0;
-  right: 0;
-  top: 0;
-}
-</style>
 
 <style lang="scss" scoped>
 .header {

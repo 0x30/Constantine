@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="header-observe-div"></div>
+    <sticky-view />
     <header-view />
     <router-view :key="$route.path" class="main"></router-view>
     <footer-view />
@@ -12,11 +12,13 @@ import Vue from "vue";
 
 import HeaderVue from "./components/Header.vue";
 import FooterVue from "./components/Footer.vue";
+import StickyObserveVue from "./components/StickyObserve.vue";
 
 export default Vue.extend({
   components: {
     "header-view": HeaderVue,
-    "footer-view": FooterVue
+    "footer-view": FooterVue,
+    "sticky-view": StickyObserveVue
   }
 });
 </script>

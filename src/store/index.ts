@@ -4,8 +4,14 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    isNavgationBarSticky: "false"
+  },
+  mutations: {
+    setIsNavgationBarSticky(state, isSticky) {
+      state.isNavgationBarSticky = isSticky
+    }
+  },
   actions: {},
   modules: {}
 });
