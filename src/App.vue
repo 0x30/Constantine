@@ -1,11 +1,9 @@
 <template>
   <div id="app">
     <div id="header-observe-div"></div>
-    <HeaderVue />
-    <div class="main">
-      <router-view :key="$route.path"></router-view>
-    </div>
-    <FooterVue />
+    <header-view />
+    <router-view :key="$route.path" class="main"></router-view>
+    <footer-view />
   </div>
 </template>
 
@@ -17,8 +15,8 @@ import FooterVue from "./components/Footer.vue";
 
 export default Vue.extend({
   components: {
-    HeaderVue,
-    FooterVue
+    "header-view": HeaderVue,
+    "footer-view": FooterVue
   }
 });
 </script>
