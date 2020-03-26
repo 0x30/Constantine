@@ -1,5 +1,6 @@
 // https://www.xiaoyulive.top/favorite/docs/Plugins_Markdown_It.html#markdown-it-table-of-contents
 
+const { fnv32a } = require("../util/hash.ts");
 const hljs = require("highlight.js"); // https://highlightjs.org/
 
 function highlight(str, lang) {
@@ -7,8 +8,8 @@ function highlight(str, lang) {
     try {
       return `<pre class="hljs"><code>${
         hljs.highlight(lang, str, true).value
-      }</code></pre>`;
-    } catch (__) {}
+        }</code></pre>`;
+    } catch (__) { }
   }
 
   return (
@@ -49,8 +50,9 @@ const md = require("markdown-it")({
 
 const matter = require("gray-matter");
 
-module.exports = function(source, meta) {
+module.exports = function (source, meta) {
   const result = matter(source, { excerpt_separator: "<!-- more -->" });
+  if (result.data.title) result.data.id = fnv32a(result.data.title).toString(16);
   if (result.content) result.contentHtml = md.render(result.content);
   if (result.excerpt) result.excerptHtml = md.render(result.excerpt);
   return `export default ${JSON.stringify(result)}`;
