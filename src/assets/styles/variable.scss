@@ -13,7 +13,8 @@
   --primary-color: #db4d52;
 
   --accent-color: #d0d0d0;
-  --table-head-color: #d0d0d0;
+  --table-head-color: #f7f7f7;
+  --table-border-color: #cecece;
 
   /* 
   constant
@@ -31,7 +32,6 @@
   --safe-area-inset-right: env(safe-area-inset-right);
 }
 
-// @import "../../../node_modules/highlight.js/styles/railscasts.css";
 @media (prefers-color-scheme: dark) {
   :root {
     // umbra 夜间样式
@@ -46,6 +46,7 @@
     --primary-color: #428bca;
 
     --accent-color: #3c3c3c;
-    --table-head-color: #4d4d4d;
+    --table-head-color: #101010;
+    --table-border-color: #252525;
   }
 }

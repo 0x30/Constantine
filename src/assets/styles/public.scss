@@ -20,14 +20,6 @@ html {
 a {
   color: var(--text-color);
 }
-pre {
-  code {
-    font-family: hack, Arial, Helvetica, sans-serif;
-  }
-}
-
-@import "../../../node_modules/highlight.js/styles/atom-one-light.css" (prefers-color-scheme: light);
-@import "../../../node_modules/highlight.js/styles/atom-one-dark.css" (prefers-color-scheme: dark);
 
 body a.no-primary-color-link {
   color: var(--text-color);

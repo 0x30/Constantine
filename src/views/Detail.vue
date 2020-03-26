@@ -13,6 +13,9 @@
 import { posts } from "@/models/Posts";
 import TagsVue from "../components/Tags.vue";
 export default {
+  props: {    
+    title: undefined
+  },
   data() {
     return {
       posts: posts,
@@ -23,7 +26,7 @@ export default {
     "tag-view": TagsVue
   },
   mounted: function() {
-    this.posts[this.$attrs.title]().then(res => (this.post = res.default));
+    this.posts[this.title]().then(res => (this.post = res.default));
   }
 };
 </script>

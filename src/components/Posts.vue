@@ -1,7 +1,7 @@
 <template>
   <div class="markdown-body">
     <article class="post-line" v-for="(post, index) in posts" v-bind:key="index">
-      <router-link class="no-primary-color-link" :to="`/post/${post.data.title}`">
+      <router-link class="no-primary-color-link" :to="`/post/${post.data.id}`">
         <h2>{{ post.data.title }}</h2>
       </router-link>
       <p v-html="post.excerptHtml" class="excerpt"></p>

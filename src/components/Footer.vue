@@ -20,7 +20,6 @@ footer.footer {
   color: var(--md-char-color);
 
   .copyright {
-    font-family: hack;
     font-size: 12px;
   }
 

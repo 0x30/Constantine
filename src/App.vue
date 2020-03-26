@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <sticky-view />
-    <header-view />
+    <!-- <sticky-view />
+    <header-view /> -->
     <router-view :key="$route.path" class="main"></router-view>
-    <footer-view />
-    <bottom-ass-view />
+    <!-- <footer-view />
+    <bottom-ass-view /> -->
   </div>
 </template>
 
@@ -18,10 +18,10 @@ import BottomAssemblyVue from "./components/BottomAssembly.vue";
 
 export default Vue.extend({
   components: {
-    "bottom-ass-view": BottomAssemblyVue,
-    "header-view": HeaderVue,
-    "footer-view": FooterVue,
-    "sticky-view": StickyObserveVue
+    // "bottom-ass-view": BottomAssemblyVue,
+    // "header-view": HeaderVue,
+    // "footer-view": FooterVue,
+    // "sticky-view": StickyObserveVue
   }
 });
 </script>
