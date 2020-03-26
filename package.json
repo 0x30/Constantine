@@ -52,7 +52,7 @@
     "sass": "^1.23.7",
     "sass-loader": "^8.0.0",
     "string": "^3.3.3",
-    "typescript": "~3.5.3",
+    "typescript": "^3.6.4",
     "uslug": "^1.0.4",
     "vue-template-compiler": "^2.6.10"
   }
